@@ -1,0 +1,101 @@
+$navbar-height: 92px;
+
+html, body {
+  color: $dark-font-color;
+  background-color: $light-color;
+}
+
+* {
+  font-family: $font-family;
+}
+
+header {
+  box-shadow: 0 10px 20px $shadow-color;
+
+  nav#topnav {
+    background-color: $dark-color;
+    height: auto;
+    overflow: hidden;
+    visibility: visible;
+    @include animate(height, 0.5s);
+
+    a {
+      font-size: 1.3rem;
+      line-height: 3em;
+      color: $light-color;
+      display: inline-block;
+
+      &:hover, &:focus, &:active {
+        text-decoration: none;
+      }
+    }
+
+    .social-icons {
+      a {
+        padding: 0 1em;
+        border-left: 1px solid $navbar-translucent-light-color;
+
+        &:last-child {
+          border-right: 1px solid $navbar-translucent-light-color;
+        }
+      }
+    }
+  }
+
+  nav.navbar {
+    background-color: $lighter-dark-color;
+    border-radius: 0;
+    border-bottom: none;
+    margin-bottom: 0;
+    border-color: transparent;
+    @include animate(all, 0.5s);
+
+    a.navbar-brand img {
+      height: 25px;
+      display: inline-block;
+    }
+
+    a.navbar-brand, .navbar-nav > li > a {
+      color: $light-color;
+      @include animate(color);
+
+      &:hover {
+        color: mix($dark-color, $light-color, 30%);
+      }
+    }
+  }
+}
+#main-content {
+  & > .container,
+  & > .container-fluid,
+  #program > .container {
+    // This is required as the navbar is fixed-top
+    margin-top: $navbar-height;
+    background-color: $light-color;
+    min-height: 100vh;
+    padding-bottom: 3rem;
+  }
+}
+
+footer {
+  color: $light-color;
+  // text-align: center;
+  font-size: 0.9em;
+  font-weight: $very-thin-font-weight;
+  padding: 4em 0;
+  background:  url('../images/footer-bg.jpg');
+  // background-position: right;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  .form {
+    white-space: pre;
+    input {
+      background-color: #2C3539;
+      width: 245px;
+      height: 35px;
+      // text-align: center;
+      border: 0px solid;
+
+    }
+  }
+}
