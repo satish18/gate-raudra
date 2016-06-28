@@ -152,7 +152,7 @@ footer {
           text-overflow: ellipsis;
           overflow: hidden;
           border-bottom: 1px solid #dadada;
-          padding-bottom: 0.3em;
+          padding-bottom: 0.2em;
           margin-top: 0.8em; }
           #videos .video-nav .items .item h4 i {
             margin-right: 0.5em;
@@ -176,7 +176,7 @@ footer {
 
 #courses {
   text-align: center;
-  padding-top: 4vh; }
+  padding-top: 2vh; }
   #courses h2 {
     text-align: center;
     color: #315562;
@@ -355,19 +355,20 @@ footer {
     background-position: bottom; }
 
 #courses {
-  padding-top: 14vh;
+  padding-top: 13vh;
   text-align: center; }
   #courses .course-slide-container {
-    background: #DEEBF3; }
+    background: #315562; }
     #courses .course-slide-container i {
-      font-size: 30px; }
+      font-size: 30px;
+      color: white; }
     #courses .course-slide-container h2 {
+      color: white;
       text-align: center;
-      text-shadow: 1px 1px #315562; }
+      text-shadow: 1px 1px white; }
   #courses h4 {
     color: #315562;
-    font-size: 2.5rem;
-    text-shadow: 0.2px 0.2px #315562; }
+    font-size: 2.5rem; }
   #courses .space-20 {
     padding: 20px; }
   #courses .margin-b20 {
@@ -380,20 +381,50 @@ footer {
   #courses .dark-grey {
     text-align: justify;
     text-justify: inter-word;
-    color: #315568; }
+    color: #a99999; }
   #courses .row {
     margin-right: -15px; }
   #courses .img-container i {
-    font-size: 60px; }
-  #courses .sub-img {
-    text-align: center; }
-    #courses .sub-img img {
-      width: 100%;
-      height: 70vh; }
-  #courses .course-content p {
-    font-size: 0.6em;
-    line-height: normal; }
+    font-size: 60px;
+    color: #315562; }
 
-#test-series .land-img img {
-  width: 100%;
-  height: 70vh; }
+#faq {
+  padding-top: 13vh;
+  text-align: center; }
+  #faq .faq-slide-container {
+    background: #315562; }
+    #faq .faq-slide-container i {
+      font-size: 30px;
+      color: white; }
+    #faq .faq-slide-container h2 {
+      color: white;
+      text-align: center;
+      text-shadow: 1px 1px white; }
+  #faq .faq-content {
+    background-color: #F5F5F5;
+    padding: 5px;
+    margin: 10px;
+    border: 0px solid #315562;
+    border-radius: 50px; }
+    #faq .faq-content h4 {
+      padding-left: 50px;
+      padding-right: 50px;
+      text-align: left;
+      color: #315562; }
+    #faq .faq-content p {
+      padding-left: 50px;
+      padding-right: 50px;
+      text-align: justify; }
+
+#test-series {
+  padding-top: 13vh;
+  text-align: center; }
+  #test-series .test-slide-container {
+    background: #315562; }
+    #test-series .test-slide-container i {
+      font-size: 30px;
+      color: white; }
+    #test-series .test-slide-container h2 {
+      color: white;
+      text-align: center;
+      text-shadow: 1px 1px white; }
