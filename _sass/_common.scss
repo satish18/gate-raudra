@@ -76,26 +76,33 @@ header {
     padding-bottom: 3rem;
   }
 }
-
 footer {
   color: $light-color;
-  // text-align: center;
+  text-align: center;
   font-size: 0.9em;
   font-weight: $very-thin-font-weight;
-  padding: 4em 0;
-  background:  url('../images/footer-bg.jpg');
-  // background-position: right;
+  padding: 8em 0;
+  background: $dark-color url('../images/footer-bg.jpg');
+  background-position: right;
   background-repeat: no-repeat;
-  background-size: 100%;
-  .form {
-    white-space: pre;
-    input {
-      background-color: #2C3539;
-      width: 245px;
-      height: 35px;
-      // text-align: center;
-      border: 0px solid;
+  background-size: auto;
 
+
+  nav {
+    a {
+      color: $light-color;
+      margin: 0 1em;
+      @include animate(color);
+
+      &:hover {
+        color: $primary-color;
+        text-decoration: none;
+      }
     }
+  }
+
+  p {
+    margin: 1.5em 0 1em;
+    font-size: 1em;
   }
 }
