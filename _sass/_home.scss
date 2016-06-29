@@ -60,6 +60,10 @@
   padding: 5vh 0;
   text-align: center;
   background-color: $light-color;
+  h2 {
+    color: #315562;
+    text-shadow: 0.5px 0.5px #315562;
+  }
 
   .items-sm {
     padding: 2vw;
@@ -257,6 +261,8 @@
   h2 {
     text-align: center;
     margin-bottom: 1em;
+    color: #315562;
+    text-shadow: 0.5px 0.5px #315562;
   }
   .description-ravindra{
     padding-bottom: 2vh;
@@ -369,8 +375,9 @@
     padding-bottom: 5vh;
   }
   h2{
-    color: $light-color;
-    font-size: 3em;
+    color: #315562;
+    text-shadow: 0.5px 0.5px #315562;
+    // font-size: 2em;
   }
 
   .testimonials-container {
@@ -439,6 +446,7 @@
   h2 {
     text-align: center;
     color: #315562;
+    text-shadow: 0.5px 0.5px #315562;
     padding-bottom: 1em;
   }
   .program-content {
@@ -523,6 +531,10 @@
 #programs {
   padding-top: 10vh;
   text-align: center;
+  h2 {
+    color: #315562;
+    text-shadow: 0.5px 0.5px #315562;
+  }
 
   .details {
     .register-btn {
@@ -611,6 +623,8 @@
   overflow-x: hidden;
   h2{
     padding: 5vh 0vh;
+    color: #315562;
+    text-shadow: 0.5px 0.5px #315562;
   }
   .padding-left-right{
     padding-left: 20px;
