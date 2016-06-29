@@ -1,4 +1,4 @@
- #land {
+#land {
   // .intro {
   //   img {
   //     width: 100%;
@@ -10,8 +10,8 @@
   background-size: cover;
   background-position: bottom right;
   height: 85vh;
-  .about-ravindra{
 
+  .about-ravindra{
     padding-top: 45vh;
     font-size: 1.4em;
     margin-left: 5vw;
@@ -397,6 +397,7 @@
     // border: 3px solid $light-color;
     overflow: hidden;
     display: inline-block;
+    cursor: -webkit-grab;
 
     .testimonial-inner-box {
 
