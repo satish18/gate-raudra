@@ -1,6 +1,6 @@
 #test-series-header {
   padding-top: 13vh;
-  text-align: center;
+  text-align: left;
   .test-slide-container {
     background: #315562;
     i {
@@ -15,15 +15,22 @@
   }
 }
 #exam-time-table{
-  text-align: center;
+  text-align: left;
+  color: #315562;
   h3{
-    color: #315562;
-    padding-top: 40px;
+    // color: #315562;
+    text-shadow: 0.2px 0.2px #315562;
+    padding: 20px;
+    text-align: center !important;
+    border: 0px solid #315562;
+    border-radius: 40px;
+    background: #F4F4F4;
   }
   #description{
     padding-top: 40px;
     p{
-      text-align: left;
+      text-align: justify;
+
       font-size: 1.17em;
     }
   }
