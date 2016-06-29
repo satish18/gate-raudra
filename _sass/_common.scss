@@ -76,29 +76,30 @@ header {
     padding-bottom: 3rem;
   }
 }
+
 footer#footer {
+  background-image: url("../images/footer-bg.jpg");
+  background-size: auto 100%;
+  background-color: rgb(15, 26, 30);
   color: $light-color;
   text-align: center;
   font-size: 0.9em;
   font-weight: $very-thin-font-weight;
-  padding: 8em 0;
-  background: $dark-color url('../images/footer-bg.jpg');
+  padding: 4em 0;
   background-position: right;
   background-repeat: no-repeat;
-  background-size: auto;
-
-
+  background-size: auto 100%;
   nav {
-    a {
-      color: $light-color;
-      margin: 0 1em;
-      @include animate(color);
+      a {
+        color: $light-color;
+        margin: 0 1em;
+        @include animate(color);
 
-      &:hover {
-        color: $primary-color;
-        text-decoration: none;
+        &:hover {
+          color: $primary-color;
+          text-decoration: none;
+        }
       }
-    }
   }
 
   p {
