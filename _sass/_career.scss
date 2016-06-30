@@ -1,0 +1,30 @@
+#career-header {
+  padding-top: 13vh;
+  text-align: left;
+  .career-slide-container {
+    background: #315562;
+    i {
+      font-size: 30px;
+      color: white;
+    }
+    h2 {
+      color: white;
+      text-align: center;
+      text-shadow: 1px 1px white;
+    }
+  }
+}
+#career-body {
+  padding: 50px;
+  .space-10 {
+    padding: 10px;
+  }
+  .form-group-new {
+    margin-bottom: 15px;
+  }
+  @media (min-width: 1200px) {
+  .container {
+    width: 700px;
+  }
+}
+}
