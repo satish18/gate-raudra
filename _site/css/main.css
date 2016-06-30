@@ -26,7 +26,7 @@ header {
       header nav#topnav .social-icons a:last-child {
         border-right: 1px solid rgba(255, 255, 255, 0.3); }
   header nav.navbar {
-    background-color: #2f2f2f;
+    background-color: #0f1a1e;
     border-radius: 0;
     border-bottom: none;
     margin-bottom: 0;
@@ -49,31 +49,33 @@ header {
   padding-bottom: 3rem; }
 
 footer#footer {
-  background-image: url("../images/footer-bg.jpg");
-  background-size: auto 100%;
-  background-color: #0f1a1e;
   color: #ffffff;
-  text-align: center;
   font-size: 0.9em;
   font-weight: 100;
   padding: 4em 0;
+  background: url("../images/footer-bg.jpg");
   background-position: right;
   background-repeat: no-repeat;
-  background-size: auto 100%; }
-  footer#footer nav a {
-    color: #ffffff;
-    margin: 0 1em;
-    transition: color 0.3s ease-in; }
-    footer#footer nav a:hover {
-      color: #009688;
-      text-decoration: none; }
-  footer#footer p {
-    margin: 1.5em 0 1em;
+  background-size: auto cover; }
+  footer#footer .copyrights {
+    padding-top: 2vh;
+    text-align: center; }
+  footer#footer .footer-div p {
     font-size: 1em; }
+  footer#footer .footer-div .subscribe-btn {
+    color: #222; }
+  footer#footer .explore {
+    padding-left: 10vw;
+    color: #ffffff; }
+  footer#footer .form {
+    max-width: 90%; }
+    footer#footer .form input {
+      background-color: #2C3539;
+      color: white; }
 
 #land {
   overflow-x: hidden;
-  background-image: url("../images/home/ravindra.jpg");
+  background-image: url("../images/home/ravi.jpg");
   background-size: cover;
   background-position: bottom right;
   height: 85vh; }
@@ -105,6 +107,8 @@ footer#footer {
   padding: 5vh 0;
   text-align: center;
   background-color: #ffffff; }
+  #about h2 {
+    color: #315562; }
   #about .items-sm {
     padding: 2vw; }
     #about .items-sm .item {
@@ -218,7 +222,8 @@ footer#footer {
   padding: 3vh 0 10vh; }
   #videos h2 {
     text-align: center;
-    margin-bottom: 1em; }
+    margin-bottom: 1em;
+    color: #315562; }
   #videos .description-ravindra {
     padding-bottom: 2vh;
     line-height: 25px;
@@ -296,8 +301,7 @@ footer#footer {
   #testimonials .bottom-padding {
     padding-bottom: 5vh; }
   #testimonials h2 {
-    color: #ffffff;
-    font-size: 3em; }
+    color: #315562; }
   #testimonials .testimonials-container {
     width: 80vw;
     margin: 0 auto; }
@@ -411,6 +415,8 @@ footer#footer {
 #programs {
   padding-top: 10vh;
   text-align: center; }
+  #programs h2 {
+    color: #315562; }
   #programs .details {
     /* Zebra striping */ }
     #programs .details .register-btn {
@@ -484,7 +490,8 @@ footer#footer {
   padding-bottom: 5vh;
   overflow-x: hidden; }
   .course-highlights h2 {
-    padding: 5vh 0vh; }
+    padding: 5vh 0vh;
+    color: #315562; }
   .course-highlights .padding-left-right {
     padding-left: 20px;
     padding-right: 20px; }
@@ -579,7 +586,7 @@ footer#footer {
 
 #test-series-header {
   padding-top: 13vh;
-  text-align: center; }
+  text-align: left; }
   #test-series-header .test-slide-container {
     background: #315562; }
     #test-series-header .test-slide-container i {
@@ -591,12 +598,21 @@ footer#footer {
       text-shadow: 1px 1px white; }
 
 #exam-time-table {
-  text-align: center; }
+  text-align: left;
+  color: #315562; }
   #exam-time-table h3 {
-    color: #315562;
-    padding-top: 40px; }
+    text-shadow: 0.4px 0.4px #315562;
+    padding: 20px;
+    text-align: center !important;
+    border: 0px solid #315562;
+    border-radius: 40px;
+    background: #F4F4F4; }
   #exam-time-table #description {
     padding-top: 40px; }
     #exam-time-table #description p {
-      text-align: left;
+      text-align: justify;
       font-size: 1.17em; }
+
+#register {
+  padding-top: 15vh;
+  padding-bottom: 5vh; }
