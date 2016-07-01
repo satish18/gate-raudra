@@ -9,7 +9,21 @@
   </nav>
   <p>Raudra Eduservices Pvt. Ltd. &copy; 2016</p>
 </footer> -->
-
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    var inputArray = $(":input").serializeArray();
+    var values = {};
+    console.log(inputArray);
+    $.each(inputArray, function(i, val){
+      values[val.name] = val.value;
+    });
+    $.post('http://127.0.0.1:8000/raudra/subscribe/', values, function(data){
+      console.log(data);
+    });
+});
+});
+</script>
 <footer id="footer">
   <div class="container container-table">
   <div class="row">
@@ -23,11 +37,11 @@
     </div>
     <div class="col-xs-12 col-md-4 footer-div" >
       <h4>Subscribe for Updates</h4>
-      <div class="form-group form">
-        <input type="text" class="form-control" placeholder="Name"><br/>
-        <input type="email" class="form-control" placeholder="Email"><br>
+      <form  class="form" method="post">
+        <input type="text" name="name" class="form-control" placeholder="Name"><br/>
+        <input type="email" name="email" class="form-control" placeholder="Email"><br>
         <button type="button" class="btn btn-secondary subscribe-btn pull-left">Subscribe</button>
-      </div>
+      </form>
 
     </div>
     <div class="hidden-xs hidden-sm col-md-4 explore">
@@ -35,7 +49,7 @@
       <h6> Courses</h6>
       <h6> Test Series</h6>
       <h6> Testimonials</h6>
-      <h6> Faq</h6>
+      <h6> FAQ'S</h6>
       <h6> Careers</h6>
     </div>
   </div>
