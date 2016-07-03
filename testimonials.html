@@ -3,3 +3,39 @@ title: Testimonials
 permalink: /testimonials/
 layout: default
 ---
+<script>
+$(document).ready(function(){
+  var page = 1;
+  var results = $.get('{{site.raudraurl}}testimonials/?page='+page, function(data){
+    testimonials = data.results;
+    page += 1;
+    var text = "<div class='row'>"
+    for (var i=0; i<testimonials.length; i++){
+      // text += ";
+        person = testimonials[i];
+        text += "<div class='col-md-4 person-box common-col'><h4><b>"+person.name+"</b>&nbsp&nbsp<b>"+person.college+"</b></h4><br><img src="+person.photo+"><br><p>"+person.description+"</p></div>"
+    }
+    text += "</div>"
+    $("div.text").html(text);
+    // console.log(text);
+
+  });
+});
+</script>
+<section id="testimonial-header">
+  <div class="testimonial-slide-container">
+    <div class="container">
+      <div class="row text-center">
+        <div>
+          <span><br><br><i class="fa fa-quote-left" aria-hidden="true"></i></span>
+        </div>
+        <h2>TESTIMONIALS</h2>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="testimonial-body">
+  <div class="container">
+    <div class="text"></div>
+  </div>
+</section>

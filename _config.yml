@@ -16,6 +16,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://yourdomain.com" # the base hostname & protocol for your site
 twitter_username: jekyllrb
 github_username:  jekyll
+raudraurl: 'http://127.0.0.1:8000/raudra/'
 
 # Build settings
 markdown: kramdown
