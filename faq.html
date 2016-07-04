@@ -5,9 +5,8 @@ layout: default
 ---
 <script>
 $(document).ready(function(){
-  var results = $.get('{{site.raudraurl}}faq/', function(data){
+  var results = $.get('{{site.raudraurl}}faq/?limit=1000', function(data){
     faqs = data.results;
-    console.log(faqs);
     var text = ''
     $.each(faqs, function(i, val){
       text += "<div class='faq-content margin-b20'><h4>"+val.question+"</h4><p>"+val.answer+"</p></div>";

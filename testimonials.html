@@ -6,8 +6,9 @@ layout: default
 <script>
 $(document).ready(function(){
   var page = 1;
-  var results = $.get('{{site.raudraurl}}testimonials/?page='+page, function(data){
+  var results = $.get('{{site.raudraurl}}testimonials/?limit=12&page='+page, function(data){
     testimonials = data.results;
+    console.log(data);
     page += 1;
     var text = "<div class='row'>"
     for (var i=0; i<testimonials.length; i++){

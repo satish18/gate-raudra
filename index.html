@@ -1,6 +1,30 @@
 ---
 layout: default
 ---
+<script>
+
+$(document).ready(function(){
+  var results = $.get('{{site.raudraurl}}testimonials/?limit=12', function(data){
+    var testimonials = data.results;
+    var text = "<div class='row hidden-sm'>"
+    $.each(testimonials, function(i, val){
+      text += "<div class='col-sm-1 testimonial1 ' data-author='"+val.name+"' data-content='"+val.description+"' data-image='"+val.photo+"'><img src="+val.photo+" id='img_'"+i+"></div>"
+    });
+    $("div.slide-img").html(text);
+    var selected = "<div class='row'><div class='col-md-3'><img src="+testimonials[0].photo+"></img>"
+    selected += "</div><div class='col-md-9'><h4><i>"+testimonials[0].name+"</i></h4><p><i class='fa fa-quote-left'></i>&nbsp&nbsp"+testimonials[0].description+"&nbsp&nbsp<i class='fa fa-quote-right'></i></p></div></div>"
+    $("div.testimonial-display").html(selected);
+    $('.testimonial1').on('click',function(){
+      var person = "<div class='row'>"
+      person += "<div class='col-md-3'><img src="+$(this).attr('data-image')+"></img></div>"
+      person += "<div class='col-md-9'><h4><i>"+$(this).attr('data-author')+"</i></h4><p><i class='fa fa-quote-left'></i>&nbsp&nbsp"+$(this).attr('data-content')+"&nbsp&nbsp<i class='fa fa-quote-right'></i></p></div>"
+      person += "</div>"
+      console.log(person)
+      $("div.testimonial-display").html(person);
+    });
+  });
+});
+</script>
 <section id="land" class="land">
   <div class="col-md-12 about-ravindra">
   <div id="text-carousel" class="carousel slide" data-ride="carousel">
@@ -32,7 +56,6 @@ layout: default
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>
@@ -184,8 +207,18 @@ layout: default
     </div>
   </div>
 </section>
-
-<section id="testimonials" class="testimonial hidden-xs hidden-sm">
+<section id="testimonials">
+  <h2> Testimonials </h2>
+  <div class="container testimonial-display">
+  </div>
+  <div class="container hidden-sm">
+    <div class="slide-img hidden-sm hidden-xs"></div>
+  </div>
+  <div class="view-testimonials">
+    <a href="{{site.baseurl}}/testimonials/" style="text-decoration: none;"><h4>View All</h4></a>
+  </div>
+</section>
+<!-- <section id="testimonials" class="testimonial hidden-xs hidden-sm">
   <h2 class="bottom-padding"> Testimonials </h2>
   <div class="testimonials-container">
     <div class="testimonials-1">
@@ -193,18 +226,18 @@ layout: default
         <div class="testimonial-inner-box">
           <img src="{{site.baseurl}}/images/testimonials/pallavi-chugh.jpg" alt="">
         </div>
-      </div><!--
-      --><div class="testimonial" data-author="Sneha Sinha" data-content="I am Sneha Sinha in my final year CSE, NIT Rourkela.My gate AIR is 52 in GATE 2015 and I have followed your lectures  for just 4 month.I am very grateful to you for providing so many  videos which cleared all my doubts.">
+      </div>
+      <div class="testimonial" data-author="Sneha Sinha" data-content="I am Sneha Sinha in my final year CSE, NIT Rourkela.My gate AIR is 52 in GATE 2015 and I have followed your lectures  for just 4 month.I am very grateful to you for providing so many  videos which cleared all my doubts.">
         <div class="testimonial-inner-box">
           <img src="{{site.baseurl}}/images/testimonials/Sneha-sinha.jpg" alt="">
         </div>
-      </div><!--
-      --><div class="testimonial" data-author="Tamanna Singla" data-content="I cannot say enough about Ravindra sir , how excellent he is as a teacher and human as a whole. I started taking his online classes in Febraury 2015 and I topped in DBMS and Computer networks in the college just because of those classes. And I have got placed in ‘Deloitte’ , the first company to have come in the campus , again because of him. Now I am looking forward to score a very good rank in GATE. So I would say my career took a significant direction since I started with his classes. I owe him everything whatever I will achieve in future.">
+      </div>
+      <div class="testimonial" data-author="Tamanna Singla" data-content="I cannot say enough about Ravindra sir , how excellent he is as a teacher and human as a whole. I started taking his online classes in Febraury 2015 and I topped in DBMS and Computer networks in the college just because of those classes. And I have got placed in ‘Deloitte’ , the first company to have come in the campus , again because of him. Now I am looking forward to score a very good rank in GATE. So I would say my career took a significant direction since I started with his classes. I owe him everything whatever I will achieve in future.">
         <div class="testimonial-inner-box" >
           <img src="{{site.baseurl}}/images/testimonials/TAMANNA-SINGLA.jpg" alt="">
         </div>
-      </div><!--
-      --><div class="testimonial" data-author="Nirmalendu Diwakar" data-content="Marking the most important day in my life. Got admission call from IISc ME in CSE. Received the mail at 06:43 p.m. have been thinking that its a dream. All because of the greatest instructor in CS Sir Ravindra Babu Ravula. Would be thankful to you always.">
+      </div>
+      <div class="testimonial" data-author="Nirmalendu Diwakar" data-content="Marking the most important day in my life. Got admission call from IISc ME in CSE. Received the mail at 06:43 p.m. have been thinking that its a dream. All because of the greatest instructor in CS Sir Ravindra Babu Ravula. Would be thankful to you always.">
         <div class="testimonial-inner-box">
           <img src="{{site.baseurl}}/images/testimonials/Nirmaledu.jpg" alt="">
         </div>
@@ -216,25 +249,25 @@ layout: default
         <div class="testimonial-inner-box">
           <img src="{{site.baseurl}}/images/testimonials/Jyoti-Bala-Solanki.jpg" alt="">
         </div>
-      </div><!--
-      --><div class="testimonial" data-author="Sridhar" data-content="If I haven't met Ravindrababu Ravula, I would have been working in TCS and missed a lot in my life. Thank you so much. Now I am done with my MTech from IITB and got placed in Microsoft. Thanks a lot.">
+      </div>
+      <div class="testimonial" data-author="Sridhar" data-content="If I haven't met Ravindrababu Ravula, I would have been working in TCS and missed a lot in my life. Thank you so much. Now I am done with my MTech from IITB and got placed in Microsoft. Thanks a lot.">
         <div class="testimonial-inner-box">
           <img src="{{site.baseurl}}/images/testimonials/sridhar.jpg" alt="">
         </div>
-      </div><!--
-      --><div class="testimonial" data-author="Aakash chaudhary" data-content="I got AIR 73 in GATE 2015 and thanks to you for your lectures. They have helped me to get this.">
+      </div>
+      <div class="testimonial" data-author="Aakash chaudhary" data-content="I got AIR 73 in GATE 2015 and thanks to you for your lectures. They have helped me to get this.">
         <div class="testimonial-inner-box">
           <img src="{{site.baseurl}}/images/testimonials/Aakash-chaudhary.jpg" alt="">
         </div>
-      </div><!--
-      --><div class="testimonial" data-author="Ashraf Ali Shaik" data-content="​I was a confused ECE Graduate Student who has intention to learn but never figured out a way to learn CS. After Watching your videos, I know how to learn, I know to look exactly for the main point and cut out all the crap. Able to learn any tool or language or technology using the basics from Algo,Networks,OS,DBMS. Able to code optimally by designing my own Algorithm for any given problem. Connect to any remote servers & clients and use any protocol from command line across subnets. I can easily write multithreaded programs and can easily synchronize them. I can explain Normalization even if some one wakes me up in middle of my sleep. I can actually visualize recursion . (I think it would have taken 3 to 4 years for me to understand this). GPA in Sem 3 -- 3.85/4 ----  Sem 4 -- 4/4. I have confidence in me that i can clear interview rounds more easily.I have dedicated just 3 months of my time to just watch your videos and i was able to clearly see the difference in my confidence. I was able to answer a lot of questions from basics and i was able to guess what they will be asking next.I don't know about GATE but the precision with which you explain each concept is brilliant. Thanks a​ ​lot for helping me and i am pretty confident that these qualities taught by you will give me an edge over other people in my professional life. I have got an offer as Associate software developer from Pearson Education and i am joining my job from ">
+      </div>
+      <div class="testimonial" data-author="Ashraf Ali Shaik" data-content="​I was a confused ECE Graduate Student who has intention to learn but never figured out a way to learn CS. After Watching your videos, I know how to learn, I know to look exactly for the main point and cut out all the crap. Able to learn any tool or language or technology using the basics from Algo,Networks,OS,DBMS. Able to code optimally by designing my own Algorithm for any given problem. Connect to any remote servers & clients and use any protocol from command line across subnets. I can easily write multithreaded programs and can easily synchronize them. I can explain Normalization even if some one wakes me up in middle of my sleep. I can actually visualize recursion . (I think it would have taken 3 to 4 years for me to understand this). GPA in Sem 3 -- 3.85/4 ----  Sem 4 -- 4/4. I have confidence in me that i can clear interview rounds more easily.I have dedicated just 3 months of my time to just watch your videos and i was able to clearly see the difference in my confidence. I was able to answer a lot of questions from basics and i was able to guess what they will be asking next.I don't know about GATE but the precision with which you explain each concept is brilliant. Thanks a​ ​lot for helping me and i am pretty confident that these qualities taught by you will give me an edge over other people in my professional life. I have got an offer as Associate software developer from Pearson Education and i am joining my job from ">
         <div class="testimonial-inner-box">
           <img src="{{site.baseurl}}/images/testimonials/ashraf-ali-shaik.jpg" alt="">
         </div>
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <section id="programs" class="hidden-md hidden-lg">
   <h2>Program Details</h2>
@@ -255,8 +288,8 @@ layout: default
           <td>GATE 2017, UGC NET and IIITH Entrance exams</td>
           <td><i class="fa fa-inr" area-hidden='true'></i><strong> 28000</strong></td>
           <td><strong>12</strong></td>
-          <td colspan="2"><a href="https://www.edx.org/course/toeflr-test-preparation-insiders-guide-etsx-toeflx"
-          target="_blank" class='register-btn'>Register</a></td>
+          <td colspan="2"><a href="{{site.baseurl}}/register/"
+          class='register-btn' style="text-decoration:none;">Register</a></td>
 
         </tr>
         <tr>
@@ -264,16 +297,16 @@ layout: default
           <td>GATE 2017, GATE 2018 UGC NET and IIITH Entrance exams</td>
           <td><i class="fa fa-inr" area-hidden='true'></i><strong> 42000</strong></td>
           <td><strong>18</strong></td>
-          <td><a href="https://www.edx.org/course/toeflr-test-preparation-insiders-guide-etsx-toeflx"
-          target="_blank" class='register-btn'>Register</a></td>
+          <td><a href="{{site.baseurl}}/register/"
+          class='register-btn' style="text-decoration:none;">Register</a></td>
         </tr>
         <tr>
           <td>Single Subject</td>
           <td>-</td>
           <td><i class="fa fa-inr" area-hidden='true'></i><strong> 6000</strong></td>
           <td><strong>12</strong></td>
-          <td><a href="https://www.edx.org/course/toeflr-test-preparation-insiders-guide-etsx-toeflx"
-          target="_blank" class='register-btn'>Register</a></td>
+          <td><a href="{{site.baseurl}}/register/"
+          class='register-btn' style="text-decoration:none;">Register</a></td>
         </tr>
         <tr>
           <td>Maths + Aptitude</td>
@@ -369,7 +402,7 @@ layout: default
         <h3>Video Lectures</h3>
         <p>3000+ videos uploaded</p>
         <p>watch unlimited times</p>
-        <a href="">Read More</a>
+        <a href="http://eclassesbyravindra.com/" target="">Details</a>
       </div>
     </div>
     <div class="col-xs-6 col-sm-3">
@@ -379,7 +412,7 @@ layout: default
         <h3>Subject Experts</h3>
         <p>Instant Reply for Mails</p>
         <p>Mentors available on Call</p>
-        <a href="">Read More</a>
+        <a href="http://eclassesbyravindra.com/" target="_blank">Details</a>
       </div>
     </div>
     <div class="col-xs-6 col-sm-3">
@@ -389,7 +422,7 @@ layout: default
         <h3>Test Series</h3>
         <p>300+ Topic wise tests</p>
         <p>5+ Mock Gate Exams</p>
-        <a href="">Read More</a>
+        <a href="http://eclassesbyravindra.com/" target="_blank">Details</a>
       </div>
     </div>
     <div class="col-xs-6 col-sm-3">
@@ -399,7 +432,7 @@ layout: default
         <h3>Study Material</h3>
         <p>Practice questions</p>
         <p>coverd on each Topic</p>
-        <a href="">Read More</a>
+        <a href="http://eclassesbyravindra.com/" target="_blank">Details</a>
       </div>
     </div>
   </div>

@@ -4,10 +4,29 @@ permalink: /careers/
 layout: default
 ---
 <script>
-formPost(){
-  
-}
+$(document).ready(function(){
+  $("button").click(function(){
+    var form = document.forms.namedItem("fileinfo");
+	var oOutput = oData = new FormData(form);
+	  var oReq = new XMLHttpRequest();
+	  oReq.open("POST", "http://127.0.0.1:8000/raudra/career/", true);
+	  oReq.onload = function(oEvent) {
+		if (oReq.status == 200) {
+		  console.log("success");
+      // $('success-form').html("Thanks For applying");
+      location.reload();
+
+		} else {
+		  oOutput.innerHTML = "Error " + oReq.status + " occurred when trying to upload your file.<br \/>";
+		}
+	  };
+
+	  oReq.send(oData);
+	  ev.preventDefault();
+  });
+});
 </script>
+
 <section id="career-header">
   <div class="career-slide-container">
     <div class="container">
@@ -21,39 +40,54 @@ formPost(){
   </div>
 </section>
 <section id="career-body">
+  <div class="success-form container"></div>
   <div class="container">
     <div class="row">
       <div class="col-offset-3 col-6 ">
-        <form action="" method="post">
+        <form id="form-career" action="" method="post" name="fileinfo"enctype="multipart/form-data">
           <div class="form-group-new space-10">
-            <label for="inputlg">First Name</label>
-            <input type="text" class="form-control" name="firstname" placeholder="Your First Name.." autocomplete="off">
+            <label for="inputlg">First Name*</label>
+            <input id="first_name" type="text" class="form-control" name="first_name" placeholder="Your First Name.." autocomplete="off">
           </div>
           <div class="form-group-new space-10">
-            <label for="last-name">Last Name</label>
-            <input type="text" class="form-control" name="lastname" placeholder="Your Last Name.." autocomplete="off">
+            <label for="last-name">Last Name*</label>
+            <input id="last_name" type="text" class="form-control" name="last_name" placeholder="Your Last Name.." autocomplete="off">
           </div>
           <div class="form-group-new space-10">
-            <label for="email">Email Address</label>
-            <input type="email" class="form-control" name="email" placeholder="Your Email Address.." autocomplete="off">
+            <label for="email">Email Address*</label>
+            <input id="email" type="email" class="form-control" name="email" placeholder="Your Email Address.." autocomplete="off">
           </div>
           <div class="form-group-new space-10">
-            <label for="mobile">Mobile Number</label>
-            <input type="text" class="form-control" name="mobile" placeholder="Your Mobile Number.." autocomplete="off">
+            <label for="mobile">Mobile Number*</label>
+
+          <input id="mobile" type="text" class="form-control" name="mobile" placeholder="Your Mobile Number.." autocomplete="off">
           </div>
           <div class="form-group-new space-10">
+            <label for="college">College*</label>
+            <input id="college" type="text" class="form-control" name="college" placeholder="Your College Name.." autocomplete="off">
+          </div>
+          <div class="form-group-new space-10">
+            <label for="university">University*</label>
+            <input id="university" type="text" class="form-control" name="university" placeholder="Your University Name.." autocomplete="off">
+          </div>
+          <div class="form-group-new space-10">
+            <label for="percentage">Percentage*</label>
+            <input id="percentage" type="text" class="form-control" name="percentage" placeholder="Your Percentage.." autocomplete="off">
+          </div>
+          <!-- <div class="form-group-new space-10">
             <label for="subject">Subject</label>
             <input type="text" class="form-control" name="subject" placeholder="Resume Subject.." autocomplete="off">
-          </div>
+          </div> -->
           <div class="form-group-new space-10">
             <label for="resume">Resume</label>
-            <input type="file" class="form-control" name="resume" placeholder="Attach Resume.." autocomplete="off">
+            <input id="file" type="file" class="form-control" name="resume" placeholder="Attach Resume.." autocomplete="off">
           </div>
           <div class="form-group-new space-10">
             <!-- <label for="resume">Resume</label> -->
             <!-- <input type="submit" class="form-control" name="send" placeholder="send" autocomplete="off"> -->
-            <button type="button" class="btn btn-success" onclick="formPost()">Send</button>
+            <button type="button" id="post-button" class="btn btn-success">Send</button>
           </div>
+        </form>
         </div>
       </div>
     </div>

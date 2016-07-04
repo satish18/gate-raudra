@@ -76,44 +76,33 @@ header {
     padding-bottom: 3rem;
   }
 }
-#footer {
+footer {
+  background-image: url("../images/footer-bg.jpg");
+  background-size: auto 100%;
+  background-color: rgb(15, 26, 30);
   color: $light-color;
-  // text-align: center;
+  text-align: center;
   font-size: 0.9em;
   font-weight: $very-thin-font-weight;
   padding: 4em 0;
-  background:  url('../images/footer-bg.jpg');
   background-position: right;
   background-repeat: no-repeat;
-  background-size: auto cover;
-  .copyrights{
-    padding-top: 2vh;
-    text-align: center;
-  }
-  .footer-div {
-    p {
-      font-size: 1em;
-    }
-    .subscribe-btn{
-      color: $dark-color;
-      // background-color:
-    }
-  }
-  .explore{
-    padding-left: 10vw;
-    color: $light-color;
-    // h4{
-    //   text-align: center;
-    // }
+  background-size: auto 100%;
+  nav {
+      a {
+        color: $light-color;
+        margin: 0 1em;
+        @include animate(color);
+
+        &:hover {
+          color: $primary-color;
+          text-decoration: none;
+        }
+      }
   }
 
-  .footer-form {
-    max-width: 90%;
-    input {
-      background-color: #2C3539;
-      color: white;
-      // outline: none;
-    }
+  p {
+    margin: 1.5em 0 1em;
+    font-size: 1em;
   }
-
 }
